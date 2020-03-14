@@ -4,7 +4,6 @@ import pandas as pd
 
 df = pd.read_csv("data.csv")
 x = df.drop(df.columns[[0, 1, 3, 4, 5, 8, 9, 18, 19, 20, 21, 22, 23, 24, 25, 26]], axis=1)
-y = df.iloc[:, 10].values
 
 # Drop all rows having at least one missing value
 x.dropna(how='any', inplace=True)
@@ -18,7 +17,7 @@ x['Work Rate'] = x['Work Rate'].replace(['Low/ Low', 'Low/ Medium', 'Low/ High',
                               'High/ Low', 'High/ Medium', 'High/ High'], 
                               ['2', '3', '4', '3', '4', '5', '4', '5', '6'])
 x = x.astype({'Age': 'int8', 'Overall': 'int8', 'Special': 'int8', 'Work Rate': 'int8', 'Value': 'float16', 'Wage': 'float16', 'Release Clause': 'float16'})
-x = x.rename(columns={'Wage': 'Wage_in_K', 'Value': 'Value_in_K', 'Release Clause': 'Release_clause_in_M'})
+x = x.rename(columns={'Wage': 'Wage_in_K', 'Value': 'Value_in_M', 'Release Clause': 'Release_clause_in_M'})
 
 # Turn Preferred Foot into 0 and 1
 x = pd.get_dummies(x, columns=['Preferred Foot'], drop_first=True)
@@ -37,6 +36,9 @@ for val in x.loc[:, 'LS':'RB']:
 col_del_from = x.columns.get_loc('LS_0')
 col_del_to = x.columns.get_loc('RB_1')
 x.drop(x.columns[col_del_from: col_del_to + 1], axis=1, inplace=True)
+
+y = x.iloc[:, 3]
+x.drop(columns = 'Value_in_M', axis=1)
 
 # Splitting the dataset into the Training set and Test set
 from sklearn.model_selection import train_test_split
