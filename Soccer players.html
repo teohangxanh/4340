@@ -13076,7 +13076,7 @@ div#notebook {
 
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[52]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -13098,7 +13098,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[52]:</div>
+    <div class="prompt output_prompt">Out[1]:</div>
 
 
 
@@ -13279,7 +13279,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[53]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># As the dataset has some unneccessary info, such as ID, Photo, Flag, etc., I create a variable x not having them</span>
@@ -13298,7 +13298,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[53]:</div>
+    <div class="prompt output_prompt">Out[2]:</div>
 
 
 
@@ -13479,7 +13479,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[54]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
@@ -13588,7 +13588,7 @@ memory usage: 10.0+ MB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[55]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># As the dataset is pretty big: 18207 by 72, cleaning data takes a significant time. I drop rows with any missing data</span>
@@ -13700,7 +13700,7 @@ memory usage: 8.2+ MB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[56]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="p">[</span><span class="s1">&#39;Wage&#39;</span><span class="p">,</span> <span class="s1">&#39;Value&#39;</span><span class="p">,</span> <span class="s1">&#39;Release Clause&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -13716,7 +13716,7 @@ memory usage: 8.2+ MB
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[56]:</div>
+    <div class="prompt output_prompt">Out[5]:</div>
 
 
 
@@ -13788,7 +13788,7 @@ memory usage: 8.2+ MB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[57]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&#39;&#39;&#39;I start with columns &#39;Wage&#39;, &#39;Value&#39;, and &#39;Release Clause&#39;. </span>
@@ -13811,7 +13811,7 @@ memory usage: 8.2+ MB
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[57]:</div>
+    <div class="prompt output_prompt">Out[6]:</div>
 
 
 
@@ -13883,7 +13883,7 @@ memory usage: 8.2+ MB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[58]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Take a look at column &#39;Work Rate&#39;</span>
@@ -13900,7 +13900,7 @@ memory usage: 8.2+ MB
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[58]:</div>
+    <div class="prompt output_prompt">Out[7]:</div>
 
 
 
@@ -13922,7 +13922,7 @@ Name: Work Rate, dtype: object</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[59]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&#39;&#39;&#39;The column seems to be ordinal with nine categories from &quot;Low/ Low&quot; to &quot;High/ High&quot;. However, it is of object type. </span>
@@ -13944,7 +13944,7 @@ Name: Work Rate, dtype: object</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[59]:</div>
+    <div class="prompt output_prompt">Out[8]:</div>
 
 
 
@@ -13965,7 +13965,7 @@ Name: Work Rate, dtype: object</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[60]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Convert columns &#39;Special&#39;, Wage_in_K&#39;, &#39;Value_in_M&#39;, &#39;Release_clause_in_M&#39;, and &#39;Work Rate&#39; to storing numeric values</span>
@@ -14012,7 +14012,7 @@ memory usage: 273.6 KB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[61]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Turn Preferred Foot into 0 and 1 and drop the column &#39;Preferred Foot&#39;</span>
@@ -14027,7 +14027,7 @@ memory usage: 273.6 KB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[62]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Turn Preferred Foot_Right into int</span>
@@ -14041,7 +14041,7 @@ memory usage: 273.6 KB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[63]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># From column &#39;LS&#39; to &#39;RB&#39;, the values, the values are of string type and have the form such as (a+b)</span>
@@ -14058,7 +14058,7 @@ memory usage: 273.6 KB
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[63]:</div>
+    <div class="prompt output_prompt">Out[12]:</div>
 
 
 
@@ -14239,7 +14239,7 @@ memory usage: 273.6 KB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[64]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># CLean data from column LS:RB</span>
@@ -14262,7 +14262,7 @@ memory usage: 273.6 KB
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[64]:</div>
+    <div class="prompt output_prompt">Out[13]:</div>
 
 
 
@@ -14443,7 +14443,7 @@ memory usage: 273.6 KB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[65]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&#39;&#39;&#39;&quot;LS_0 and &quot;LS_1 were the left and right parts of &quot;LS&quot; without a plus sign. Now, they are not needed.</span>
@@ -14465,7 +14465,7 @@ memory usage: 273.6 KB
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[65]:</div>
+    <div class="prompt output_prompt">Out[14]:</div>
 
 
 
@@ -14646,7 +14646,7 @@ memory usage: 273.6 KB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[68]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Add series y, which is the target for the predicting model</span>
@@ -14666,7 +14666,7 @@ memory usage: 273.6 KB
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[68]:</div>
+    <div class="prompt output_prompt">Out[15]:</div>
 
 
 
@@ -14694,12 +14694,180 @@ Name: Value_in_M, Length: 14743, dtype: float16</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[69]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Splitting the dataset into the Training set and Test set</span>
 <span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
 <span class="n">x_train</span><span class="p">,</span> <span class="n">x_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Splitting the data into training and testing set and making predictions</span>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span> 
+<span class="n">lm</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span> 
+<span class="n">lm</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span> 
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">lm</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x_test</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Find mean squared errors of the predicting and real values</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_squared_error</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">squared</span> <span class="o">=</span> <span class="kc">True</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>1.3402298931445233e-24
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Find out how each variable impacts on the value of soccer players</span>
+<span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">),</span> <span class="n">values</span> <span class="o">=</span> <span class="n">x</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+<span class="c1"># This function is to eleminate columns in x having p-values &gt; significance level</span>
+<span class="k">def</span> <span class="nf">backwardElimination</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">sl</span><span class="p">):</span>
+    <span class="n">numVars</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">numVars</span><span class="p">):</span>
+        <span class="n">regressor_OLS</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+        <span class="n">maxVar</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">regressor_OLS</span><span class="o">.</span><span class="n">pvalues</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">maxVar</span> <span class="o">&gt;</span> <span class="n">sl</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">numVars</span> <span class="o">-</span> <span class="n">i</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">regressor_OLS</span><span class="o">.</span><span class="n">pvalues</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="n">maxVar</span><span class="p">:</span>
+                    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">regressor_OLS</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">x</span>
+
+<span class="n">sl</span> <span class="o">=</span> <span class="mf">0.05</span>
+<span class="n">x_opt</span> <span class="o">=</span> <span class="n">x</span><span class="p">[:,</span> <span class="p">:]</span>
+<span class="n">x_Modeled</span> <span class="o">=</span> <span class="n">backwardElimination</span><span class="p">(</span><span class="n">x_opt</span><span class="p">,</span> <span class="n">sl</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
+<span class="ansi-red-intense-fg ansi-bold">KeyError</span>                                  Traceback (most recent call last)
+<span class="ansi-green-intense-fg ansi-bold">~\Anaconda3\lib\site-packages\pandas\core\indexes\base.py</span> in <span class="ansi-cyan-fg">get_value</span><span class="ansi-blue-intense-fg ansi-bold">(self, series, key)</span>
+<span class="ansi-green-fg">   4404</span>         <span class="ansi-green-intense-fg ansi-bold">try</span><span class="ansi-yellow-intense-fg ansi-bold">:</span>
+<span class="ansi-green-intense-fg ansi-bold">-&gt; 4405</span><span class="ansi-yellow-intense-fg ansi-bold">             </span><span class="ansi-green-intense-fg ansi-bold">return</span> self<span class="ansi-yellow-intense-fg ansi-bold">.</span>_engine<span class="ansi-yellow-intense-fg ansi-bold">.</span>get_value<span class="ansi-yellow-intense-fg ansi-bold">(</span>s<span class="ansi-yellow-intense-fg ansi-bold">,</span> k<span class="ansi-yellow-intense-fg ansi-bold">,</span> tz<span class="ansi-yellow-intense-fg ansi-bold">=</span>getattr<span class="ansi-yellow-intense-fg ansi-bold">(</span>series<span class="ansi-yellow-intense-fg ansi-bold">.</span>dtype<span class="ansi-yellow-intense-fg ansi-bold">,</span> <span class="ansi-blue-intense-fg ansi-bold">&#34;tz&#34;</span><span class="ansi-yellow-intense-fg ansi-bold">,</span> <span class="ansi-green-intense-fg ansi-bold">None</span><span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">)</span>
+<span class="ansi-green-fg">   4406</span>         <span class="ansi-green-intense-fg ansi-bold">except</span> KeyError <span class="ansi-green-intense-fg ansi-bold">as</span> e1<span class="ansi-yellow-intense-fg ansi-bold">:</span>
+
+<span class="ansi-green-intense-fg ansi-bold">pandas\_libs\index.pyx</span> in <span class="ansi-cyan-fg">pandas._libs.index.IndexEngine.get_value</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
+
+<span class="ansi-green-intense-fg ansi-bold">pandas\_libs\index.pyx</span> in <span class="ansi-cyan-fg">pandas._libs.index.IndexEngine.get_value</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
+
+<span class="ansi-green-intense-fg ansi-bold">pandas\_libs\index.pyx</span> in <span class="ansi-cyan-fg">pandas._libs.index.IndexEngine.get_loc</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
+
+<span class="ansi-green-intense-fg ansi-bold">pandas\_libs\hashtable_class_helper.pxi</span> in <span class="ansi-cyan-fg">pandas._libs.hashtable.PyObjectHashTable.get_item</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
+
+<span class="ansi-green-intense-fg ansi-bold">pandas\_libs\hashtable_class_helper.pxi</span> in <span class="ansi-cyan-fg">pandas._libs.hashtable.PyObjectHashTable.get_item</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
+
+<span class="ansi-red-intense-fg ansi-bold">KeyError</span>: 70
+
+During handling of the above exception, another exception occurred:
+
+<span class="ansi-red-intense-fg ansi-bold">IndexError</span>                                Traceback (most recent call last)
+<span class="ansi-green-intense-fg ansi-bold">&lt;ipython-input-19-f280dde958fb&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-fg">     17</span> sl <span class="ansi-yellow-intense-fg ansi-bold">=</span> <span class="ansi-cyan-intense-fg ansi-bold">0.05</span>
+<span class="ansi-green-fg">     18</span> x_opt <span class="ansi-yellow-intense-fg ansi-bold">=</span> x<span class="ansi-yellow-intense-fg ansi-bold">[</span><span class="ansi-yellow-intense-fg ansi-bold">:</span><span class="ansi-yellow-intense-fg ansi-bold">,</span> <span class="ansi-yellow-intense-fg ansi-bold">:</span><span class="ansi-yellow-intense-fg ansi-bold">]</span>
+<span class="ansi-green-intense-fg ansi-bold">---&gt; 19</span><span class="ansi-yellow-intense-fg ansi-bold"> </span>x_Modeled <span class="ansi-yellow-intense-fg ansi-bold">=</span> backwardElimination<span class="ansi-yellow-intense-fg ansi-bold">(</span>x_opt<span class="ansi-yellow-intense-fg ansi-bold">,</span> sl<span class="ansi-yellow-intense-fg ansi-bold">)</span>
+
+<span class="ansi-green-intense-fg ansi-bold">&lt;ipython-input-19-f280dde958fb&gt;</span> in <span class="ansi-cyan-fg">backwardElimination</span><span class="ansi-blue-intense-fg ansi-bold">(x, sl)</span>
+<span class="ansi-green-fg">     10</span>         <span class="ansi-green-intense-fg ansi-bold">if</span> maxVar <span class="ansi-yellow-intense-fg ansi-bold">&gt;</span> sl<span class="ansi-yellow-intense-fg ansi-bold">:</span>
+<span class="ansi-green-fg">     11</span>             <span class="ansi-green-intense-fg ansi-bold">for</span> j <span class="ansi-green-intense-fg ansi-bold">in</span> range<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-cyan-intense-fg ansi-bold">0</span><span class="ansi-yellow-intense-fg ansi-bold">,</span> numVars <span class="ansi-yellow-intense-fg ansi-bold">-</span> i<span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">:</span>
+<span class="ansi-green-intense-fg ansi-bold">---&gt; 12</span><span class="ansi-yellow-intense-fg ansi-bold">                 </span><span class="ansi-green-intense-fg ansi-bold">if</span> regressor_OLS<span class="ansi-yellow-intense-fg ansi-bold">.</span>pvalues<span class="ansi-yellow-intense-fg ansi-bold">[</span>j<span class="ansi-yellow-intense-fg ansi-bold">]</span> <span class="ansi-yellow-intense-fg ansi-bold">==</span> maxVar<span class="ansi-yellow-intense-fg ansi-bold">:</span>
+<span class="ansi-green-fg">     13</span>                     x <span class="ansi-yellow-intense-fg ansi-bold">=</span> np<span class="ansi-yellow-intense-fg ansi-bold">.</span>delete<span class="ansi-yellow-intense-fg ansi-bold">(</span>x<span class="ansi-yellow-intense-fg ansi-bold">,</span> j<span class="ansi-yellow-intense-fg ansi-bold">,</span> <span class="ansi-cyan-intense-fg ansi-bold">1</span><span class="ansi-yellow-intense-fg ansi-bold">)</span>
+<span class="ansi-green-fg">     14</span>     regressor_OLS<span class="ansi-yellow-intense-fg ansi-bold">.</span>summary<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-yellow-intense-fg ansi-bold">)</span>
+
+<span class="ansi-green-intense-fg ansi-bold">~\Anaconda3\lib\site-packages\pandas\core\series.py</span> in <span class="ansi-cyan-fg">__getitem__</span><span class="ansi-blue-intense-fg ansi-bold">(self, key)</span>
+<span class="ansi-green-fg">    869</span>         key <span class="ansi-yellow-intense-fg ansi-bold">=</span> com<span class="ansi-yellow-intense-fg ansi-bold">.</span>apply_if_callable<span class="ansi-yellow-intense-fg ansi-bold">(</span>key<span class="ansi-yellow-intense-fg ansi-bold">,</span> self<span class="ansi-yellow-intense-fg ansi-bold">)</span>
+<span class="ansi-green-fg">    870</span>         <span class="ansi-green-intense-fg ansi-bold">try</span><span class="ansi-yellow-intense-fg ansi-bold">:</span>
+<span class="ansi-green-intense-fg ansi-bold">--&gt; 871</span><span class="ansi-yellow-intense-fg ansi-bold">             </span>result <span class="ansi-yellow-intense-fg ansi-bold">=</span> self<span class="ansi-yellow-intense-fg ansi-bold">.</span>index<span class="ansi-yellow-intense-fg ansi-bold">.</span>get_value<span class="ansi-yellow-intense-fg ansi-bold">(</span>self<span class="ansi-yellow-intense-fg ansi-bold">,</span> key<span class="ansi-yellow-intense-fg ansi-bold">)</span>
+<span class="ansi-green-fg">    872</span> 
+<span class="ansi-green-fg">    873</span>             <span class="ansi-green-intense-fg ansi-bold">if</span> <span class="ansi-green-intense-fg ansi-bold">not</span> is_scalar<span class="ansi-yellow-intense-fg ansi-bold">(</span>result<span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">:</span>
+
+<span class="ansi-green-intense-fg ansi-bold">~\Anaconda3\lib\site-packages\pandas\core\indexes\base.py</span> in <span class="ansi-cyan-fg">get_value</span><span class="ansi-blue-intense-fg ansi-bold">(self, series, key)</span>
+<span class="ansi-green-fg">   4409</span> 
+<span class="ansi-green-fg">   4410</span>             <span class="ansi-green-intense-fg ansi-bold">try</span><span class="ansi-yellow-intense-fg ansi-bold">:</span>
+<span class="ansi-green-intense-fg ansi-bold">-&gt; 4411</span><span class="ansi-yellow-intense-fg ansi-bold">                 </span><span class="ansi-green-intense-fg ansi-bold">return</span> libindex<span class="ansi-yellow-intense-fg ansi-bold">.</span>get_value_at<span class="ansi-yellow-intense-fg ansi-bold">(</span>s<span class="ansi-yellow-intense-fg ansi-bold">,</span> key<span class="ansi-yellow-intense-fg ansi-bold">)</span>
+<span class="ansi-green-fg">   4412</span>             <span class="ansi-green-intense-fg ansi-bold">except</span> IndexError<span class="ansi-yellow-intense-fg ansi-bold">:</span>
+<span class="ansi-green-fg">   4413</span>                 <span class="ansi-green-intense-fg ansi-bold">raise</span>
+
+<span class="ansi-green-intense-fg ansi-bold">pandas\_libs\index.pyx</span> in <span class="ansi-cyan-fg">pandas._libs.index.get_value_at</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
+
+<span class="ansi-green-intense-fg ansi-bold">pandas\_libs\index.pyx</span> in <span class="ansi-cyan-fg">pandas._libs.index.get_value_at</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
+
+<span class="ansi-green-intense-fg ansi-bold">pandas\_libs\util.pxd</span> in <span class="ansi-cyan-fg">pandas._libs.util.get_value_at</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
+
+<span class="ansi-green-intense-fg ansi-bold">pandas\_libs\util.pxd</span> in <span class="ansi-cyan-fg">pandas._libs.util.validate_indexer</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
+
+<span class="ansi-red-intense-fg ansi-bold">IndexError</span>: index out of bounds</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
 </pre></div>
 
     </div>

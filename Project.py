@@ -61,13 +61,13 @@ x = np.append(arr = np.ones((len(x), 1)).astype(int), values = x, axis = 1)
 
 # This function is to eleminate columns in x having p-values > significance level
 def backwardElimination(x, sl):
-    numVars = len(x[0])
-    for i in range(0, numVars):
+    totalVars = len(x[0])
+    for i in range(0, totalVars):
         regressor_OLS = sm.OLS(y, x).fit()
-        maxVar = max(regressor_OLS.pvalues)
-        if maxVar > sl:
-            for j in range(0, numVars - i):
-                if regressor_OLS.pvalues[j] == maxVar:
+        mx = max(regressor_OLS.pvalues)
+        if mx > sl:
+            for j in range(0, totalVars - i):
+                if regressor_OLS.pvalues[j] == mx:
                     x = np.delete(x, j, 1)
     regressor_OLS.summary()
     return x
@@ -75,12 +75,3 @@ def backwardElimination(x, sl):
 sl = 0.05
 x_opt = x[:, :]
 x_Modeled = backwardElimination(x_opt, sl)
-
-
-
-
-
-
-
-
-
