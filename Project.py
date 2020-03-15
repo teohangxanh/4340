@@ -1,5 +1,4 @@
 import numpy as np
-import matplotlib.pyplot as plt
 import pandas as pd
 
 df = pd.read_csv("data.csv")
@@ -46,10 +45,36 @@ x.drop(columns = 'Value_in_M', axis=1)
 from sklearn.model_selection import train_test_split
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size = 0.2, random_state = 0)
 
+# Splitting the data into training and testing set and making predictions
+from sklearn.linear_model import LinearRegression 
+lm = LinearRegression() 
+lm.fit(x_train, y_train) 
+y_pred = lm.predict(x_test)
 
+# Find mean squared errors of the predicting and real values
+from sklearn.metrics import mean_squared_error
+print(mean_squared_error(y_test, y_pred, squared = True))
 
+# Find out how each variable impacts on the value of soccer players
+import statsmodels.api as sm
+x = np.append(arr = np.ones((len(x), 1)).astype(int), values = x, axis = 1)
 
+# This function is to eleminate columns in x having p-values > significance level
+def backwardElimination(x, sl):
+    numVars = len(x[0])
+    for i in range(0, numVars):
+        regressor_OLS = sm.OLS(y, x).fit()
+        maxVar = max(regressor_OLS.pvalues)
+        if maxVar > sl:
+            for j in range(0, numVars - i):
+                if regressor_OLS.pvalues[j] == maxVar:
+                    x = np.delete(x, j, 1)
+    regressor_OLS.summary()
+    return x
 
+sl = 0.05
+x_opt = x[:, :]
+x_Modeled = backwardElimination(x_opt, sl)
 
 
 
