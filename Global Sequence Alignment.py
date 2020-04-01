@@ -54,14 +54,10 @@ def gsa(str1, str2, match, mismatch, gap):
         row -= 1
     # print(trace_back)
                     
-    index = ['-']
-    for i in str2:
-        index.append(i)
-    
-    columns = ['-']
-    for i in str1:
-        columns.append(i)
-    
+    index = [x for x in str2]
+    index.insert(0, '_')
+    columns = [x for x in str1]
+    columns.insert(0, '_')
     result = pd.DataFrame(result, index, columns)
     print(result)
  
@@ -130,16 +126,11 @@ def lsa(str1, str2, match, mismatch, gap):
             print(trace_back[-1])
             break
         row -= 1
-    # print(trace_back)
                     
-    index = ['-']
-    for i in str2:
-        index.append(i)
-    
-    columns = ['-']
-    for i in str1:
-        columns.append(i)
-    
+    index = [x for x in str2]
+    index.insert(0, '_')
+    columns = [x for x in str1]
+    columns.insert(0, '_')
     result = pd.DataFrame(result, index, columns)
     print(result)
     
@@ -147,3 +138,8 @@ def lsa(str1, str2, match, mismatch, gap):
 a = 'acggctc'
 b = 'atggcctc'
 gsa(a, b, 1, -3, -4)
+
+
+
+
+
