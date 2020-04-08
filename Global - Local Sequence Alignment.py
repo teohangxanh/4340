@@ -16,14 +16,14 @@ def gsa(str1, str2, match, mismatch, gap):
                 if col == 0:
                     result[row][col] = row * gap
                 else:
-                    left = result[row][col-1] + gap
-                    up = result[row-1][col] + gap
                     diag = result[row-1][col-1] 
-                    if str1[col-1] == str2[row-1]:
-                        diag += match
-                    elif str1[col-1] != str2[row-1]:
-                        diag += mismatch
-                    result[row][col] = max([left, up, diag])
+                    if row == col:
+                        result[row][col] = match if str1[col-1] == str2[row-1] else mismatch
+                        result[row][col] += diag
+                    else:
+                        left = result[row][col-1] + gap
+                        up = result[row-1][col] + gap
+                        result[row][col] = max(left, up)
                     
     trace_back = [[len(result)-1, len(result[0])-1]]
     # Priotity: up, diagonal, and left
@@ -55,9 +55,9 @@ def gsa(str1, str2, match, mismatch, gap):
     # print(trace_back)
                     
     index = [x for x in str2]
-    index.insert(0, '_')
+    index.insert(0, '')
     columns = [x for x in str1]
-    columns.insert(0, '_')
+    columns.insert(0, '')
     result = pd.DataFrame(result, index, columns)
     print(result)
  
@@ -89,14 +89,15 @@ def lsa(str1, str2, match, mismatch, gap):
     for row in range(len(result)):
         for col in range(len(result[row])):
             if row != 0 and col != 0:
-                left = max(result[row][col-1] + gap, 0)
-                up = max(result[row-1][col] + gap, 0)
-                diag = result[row-1][col-1] 
-                if str1[col-1] == str2[row-1]:
-                    diag += match
-                elif str1[col-1] != str2[row-1]:
-                    diag += mismatch
-                result[row][col] = max([left, up, diag])
+                if row == col:
+                    result[row][col] = match if str1[col-1] == str2[row-1] else mismatch
+                    diag = result[row-1][col-1] 
+                    result[row][col] += diag 
+                    result[row][col] = max(0, result[row][col])
+                else:
+                    left = max(result[row][col-1] + gap, 0)
+                    up = max(result[row-1][col] + gap, 0)
+                    result[row][col] = max([left, up, 0])
                     
     row_start, column_start = max_pos(result)
     trace_back = [[row_start, column_start]]
@@ -106,8 +107,8 @@ def lsa(str1, str2, match, mismatch, gap):
     print('val', '[r,', 'col]')
     print(result[trace_back[-1][0]][trace_back[-1][1]], end = ' ')
     print(trace_back[-1])
-    while row > 0:
-        while col > 0:
+    while row > 0 and result[row][col] != 0:
+        while col > 0 and result[row][col] != 0:
             current = result[row][col]
             diag = result[row-1][col-1]
             up = result[row-1][col]
@@ -128,16 +129,16 @@ def lsa(str1, str2, match, mismatch, gap):
         row -= 1
                     
     index = [x for x in str2]
-    index.insert(0, '_')
+    index.insert(0, '')
     columns = [x for x in str1]
-    columns.insert(0, '_')
+    columns.insert(0, '')
     result = pd.DataFrame(result, index, columns)
     print(result)
     
     
-a = 'acggctc'
-b = 'atggcctc'
-gsa(a, b, 1, -3, -4)
+a = 'gattga'
+b = 'acgc'
+gsa(a, b, 4, -1, -2)
 
 
 
