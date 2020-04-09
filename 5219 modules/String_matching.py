@@ -6,7 +6,7 @@ Created on Wed Apr  8 07:23:49 2020
 """
 
 '''
-Usage: Return the index in text where pattern = 
+Usage: Return the index in text where pattern = substring of text
 '''
 
 import timeit
@@ -58,14 +58,56 @@ def bm(p, t):
             else:
                 i = last_char_index + 1
     return result
+
+# Return length of the prefix / suffix and shift amount)
+def lps(p):
+    result = [0] * len(p)
+    i = 0
+    j = 1
+    while j < len(p):
+        if p[i] == p[j]:
+            result[j] = result[j - 1] + 1
+            i += 1
+            j += 1
+            continue
+        if p[i] != p[j]:
+            i = 0
+        j += 1
+    count = 0
+    for x in range(len(result)):
+        if result[x] > 0:
+            count += 1
+        elif result[x] == 0 and count > 0:
+            return count, x - count
+    # return result
+
+def kmp(p, t):
+    if lps(p) != None:
+        shamt, length = lps(p)
+        result = []
+        i = 0
+        while i <= len(t) - len(p):
+            if p == t[i: i + len(p)]:
+                result.append(i)
+                i += 1
+            else:
+                if p[shamt: shamt + length] == t[i + shamt: i + shamt + length]:
+                    i += shamt
+                else:
+                    i += 1
+        return result
+    else:
+        return brute_force(p,t)
+    
         
 text = "String matching is something crucial for database development and text processing software.Fortunately, every modern programming language and library is full of functions for string processing that help us in our everyday work. However it's important to understand their principles.String algorithms can typically be divided into several categories. One of these categories is string matching."
 pattern = 'in'
 print(brute_force(pattern, text))
 print(rb(pattern, text))
 print(bm(pattern, text))
+print(kmp(pattern, text))
 
-'''Check the running time of all algorithms'''
+# '''Check the running time of all algorithms'''
 print(format(timeit.timeit('''def brute_force(p, t):
     result = []
     i = 0
@@ -115,3 +157,42 @@ print(format(timeit.timeit('''def bm(p, t):
             else:
                 i = last_char_index + 1
     return result''', number = 1000), 'e'))
+
+print(format(timeit.timeit('''def lps(p):
+    result = [0] * len(p)
+    i = 0
+    j = 1
+    while j < len(p):
+        if p[i] == p[j]:
+            result[j] = result[j - 1] + 1
+            i += 1
+            j += 1
+            continue
+        if p[i] != p[j]:
+            i = 0
+        j += 1
+    count = 0
+    for x in range(len(result)):
+        if result[x] > 0:
+            count += 1
+        elif result[x] == 0 and count > 0:
+            return count, x - count
+    # return result
+
+def kmp(p, t):
+    if lps(p) != None:
+        shamt, length = lps(p)
+        result = []
+        i = 0
+        while i <= len(t) - len(p):
+            if p == t[i: i + len(p)]:
+                result.append(i)
+                i += 1
+            else:
+                if p[shamt: shamt + length] == t[i + shamt: i + shamt + length]:
+                    i += shamt
+                else:
+                    i += 1
+        return result
+    else:
+        return brute_force(p,t)''', number = 1000), 'e'))
