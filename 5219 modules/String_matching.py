@@ -22,23 +22,26 @@ def brute_force(p, t):
         i += 1
     return result
 
-def check_hash(val, mod, string):
-    hash_value = 0
-    for i in range(len(string)):
-        hash_value += (ord(string[i]) * (len(string) ** (len(string) - i - 1)) % mod) % mod
-    return val == hash_value
-
 def rb(p, t):
+    p = p.lower()
+    t = t.lower()
     result = []
     mod = 2 ** 20
     hash_value = 0
     for i in range(len(p)):
         hash_value += (ord(p[i]) * (len(p) ** (len(p) - i - 1)) % mod) % mod
     i = 0
+    h = 0
     while i <= len(t) - len(p):
-        if check_hash(hash_value, mod, pattern):
-            if t[i: i + len(p)] == p:
-                result.append(i)
+        # Compute hash value of text
+        if i == 0:
+            for j in range(len(p)):
+                h += (ord(t[j]) * (len(p) ** (len(p) - j - 1)) % mod) % mod
+        if i > 0:
+            head = ord(t[i - 1]) * (len(p) ** (len(p) - 1))
+            h = (((h - head) * len(p)) % mod + ord(t[i + len(p) - 1])) % mod
+        if hash_value == h and t[i: i + len(p)] == p:
+            result.append(i)
         i += 1
     return result  
 
@@ -121,23 +124,23 @@ print(format(timeit.timeit('''def brute_force(p, t):
 text = "String matching is something crucial for database development and text processing software.Fortunately, every modern programming language and library is full of functions for string processing that help us in our everyday work. However it's important to understand their principles.String algorithms can typically be divided into several categories. One of these categories is string matching."
 pattern = "in"''', number = 1000), 'e'))
 
-print(format(timeit.timeit('''def check_hash(val, mod, string):
-    hash_value = 0
-    for i in range(len(string)):
-        hash_value += (ord(string[i]) * (len(string) ** (len(string) - i - 1)) % mod) % mod
-    return val == hash_value
-
-def rb(p, t):
+print(format(timeit.timeit('''def rb(p, t):
     result = []
     mod = 2 ** 20
     hash_value = 0
     for i in range(len(p)):
-        hash_value += (ord(p[i]) * (len(p) ** (len(p) - i - 1)) % mod) % mod
+        hash_value += ((ord(p[i]) - ord('a')) * (len(p) ** (len(p) - i - 1)) % mod) % mod
     i = 0
+    h = 0
     while i <= len(t) - len(p):
-        if check_hash(hash_value, mod, pattern):
-            if t[i: i + len(p)] == p:
-                result.append(i)
+        # Compute hash value of text
+        if i == 0:
+            for j in range(0, len(p)):
+                h += ((ord(t[j]) - ord('a')) * (len(p) ** (len(p) - j - 1)) % mod) % mod
+        if i > 0:
+            h = ((len(p) * h) - (ord(t[j-1]) - ord('a')) * (len(p) ** (len(p) - 1)) + ord(t[j + len(p) - 1]) - ord('a')) % mod
+        if hash_value == h and t[i: i + len(p)] == p:
+            result.append(i)
         i += 1
     return result  ''', number = 1000), 'e'))
 
